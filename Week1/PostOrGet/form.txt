@@ -1,0 +1,13 @@
+<!DOCTTYPE html>
+<html lang="en">
+<head>
+<title>Document</title>
+</head>
+<body>
+	<form method = "POST" action="/"> <!---or GET--->
+		<input type="text" name="username" >
+		<br>
+		<input type="password" name="password">
+		<button type="submit">Submit</button>
+	</form>
+</body>

@@ -1,0 +1,75 @@
+/*
+* .NET core çıkış amacı tüm platformlarda derlenip çalıştırılabilir yapılar inşaa edilmek istenmesidir.
+* .NET core tüm işletim sistemlerinde çalışır.
+* Framework birçok problemi çözen araçtan oluşur.
+* Devamlı kullanacağımız özellikleri bir framework aracılığıyla kolaylıkla sağlayabiliriz.
+* C# dünyasında her şey bir nesnedir.
+*
+*
+* Primitive tip belli bir hafızası olan Stack te yer alan.
+* Tüm primitive tipler, karşılaştırılmasi, metot çağırışması Stack te olur.
+* Instance alınmamış nesne Stack te bulunur, instance aldığımızda özellikleri Heap alanında yer alır.
+* Alınan instance ın özeliklerine Heap adresi ile Heap ten ulaşılıyor.
+* Bir nesne bellekteki adresiyle tanımalanır.
+* 
+* 
+* Encapsulation -> özelliği private yapıp class içerisinde özelliği düzenleriz.Giriş çıkışa sınır verdik.
+* private get ya da private set yanlızca -> sadece class içerisinden oku ya da ata.
+*
+*
+* Constractors -> instance oluştuğunda varsayılan olarak çalışır 
+* Constractors bağlımlılık(dependency) yönetimi içinde kullanlır
+*
+* Inheritance -> silah fikrini ateşli silah olarak özelleştirdim 
+* Abstract -> Eğer fiziksel olarak neseneye dönüşmeyecek ama başka sınıflara miras vermek zorunda olan 
+* bir durumla karşılaşırsanız, tanımlayacağınız class abstract olur.
+* Abstract tanımladığımız bir classtan türeyen bir sınıf abstract classın abstract özelliklerini override 
+* etmek yani o özelliği kendine göre yazmak zorundadır.Abstract olmayan özellikleri override etmez.
+* Abstract classta her özellik abstract olmak zorunda değildir.
+* Interface yetenektir türediği sınıfta özelliğini override etmez. Abstract tan türeyen classların 
+* yetenek ihtiyacı olduğunda yani her türeyen classın yapamayacağı bir özellik olduğunda interface 
+* yaparız.
+* Bir class birden fazla interface i implemente edebilir ama bir class yanlızca bir classtan miras 
+* alabilir
+*
+* web -> request - response , bu alış verişi sağlayan-> http request protokolü
+* response olarak yanlızca html dönmez , istemciler -> telefon, playstation , bu istemcilere
+* API -> responsun doğru döndüğünü gösteren bir yapıdır biz yanlızca bununla ilgileniriz.
+* web api tools -> node.js, django, .net core
+*
+* API çıktısı JSON 
+* JSON android , flutter ya da farklı şekiller de yorumlanıp gösterilir.
+*
+* Web API terminolojisi -> açık request -> GET kapalı request-> POST 
+* 
+* MVC -> tasarımsal mimari
+* datayı gösterdiğim yer -> view yani veri alış - verişi (kullanıcının ekranda gördüğü katman)
+* veri tabanıyla alakalı tüm işlemler  modelde
+* hangi view hangi modelde gözükecek  , hangi model hangi viewdan alınacak karar veren yapı controller
+* (denetleyici)
+* Her request bir controller a gitmeli
+* models doyası 
+*
+* Her varlık 1 yer kaplamalı
+* Serialization -> ortak dile çevirme 
+* İstemci requesti gönderdiğinde sunucunun response u 200 ise başarılı
+* sayfa bulunamadı 404
+* evrensel response lar ile istemciye yanıt vermeliyiz.
+*
+* Modelin aynısını sayfada göstermek zorunda değiliz 
+* Sadece istemcinin ihtiyacı olacak modeli oluşturmalıyız bu orjinal modelden kırpılmış yeni modele DTO
+* diyoruz(data transfer object) 
+*
+* controller ın işi sadece response dönmektir !!!
+* İşi veri tabanından veri çekmek, çektiği veriyi de dto olarak dönüştüren nesneye -> Services yada
+* business deriz
+* bir yerden veriyi alacak sınıf-> business 
+* 
+*
+* FirstOrDefault -> koleksiyon dönüyorsa ya ilkini döndür yada tipin varsayılanını döndür 
+*
+*
+
+*
+*
+*/
