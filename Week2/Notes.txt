@@ -1,0 +1,98 @@
+/*
+* API in arayüzü olmaz (mobil, web) her hangi bir platformdan request gelir ve response olarak JSON döndürür 
+* Bir sürü API microservice oluyor. Sadece bir işten sorumlu yüzlerde service  -> daha esnek,daha yönetilebilir bir yapı inşa etmiş oluruz.
+* Startup http requesti üzerinde ayarlar yapabilidiğim yer. Serviceler, http protokolünün adımları 
+* Http requeste yapılacak tüm müdahaleler -middleware- dir.
+* Eğer HttpGet birden fazla kullanırsak parametre verip kullanmalıyız
+*
+* Where -> içinde var mı
+* FirstOrDefault -> gördüğün ilk elemanı ver ( koleksiyon doluysa ) koleksiyon boşsa değişkenin null karşılığını getir
+*
+* Startup -> Controllers -> Models 
+*
+* coupling -> kullanmak zorunluluktur 
+* bağımlılığı düşürmek için interface
+*
+* bağımlılık -> class > abstract > interface
+*
+* abstract class -> her özellik abstract olamak zorunda değil 
+* interface -> metod içeriğini yazamazsın yanlızca özellik ve metodun isimlerini verebilirsin 
+* bir class her zamn bir classtan miras alır 
+* bir class bir çok interface i implement edebilir
+* 
+* 
+**** SOLID -> dayanıklı esnek uygulamalar inşa etmek isteriz  
+*** 5 prensipten oluşur -> Prensipler bize kuralları söyle ve yol gösterir.
+* 
+** Single Responsibility Principle -> 
+* Her nesne tek bir işten sorumlu olmalıdır prensibi.
+* Peki bu prensibe uyduğumuzu nasıl anlayacağız : bir nesne içinde değişiklik yapmak için BİRDEN FAZLA SEBEBİNİZ varsa bu prensibe uymamışızdır.
+* -> değişebilen yada değiebilecek her şeyi başka sorumluluklara ayırmalıyız.
+* -> Prensibe göre her nesne bir iş yapmalı.
+*
+*
+** Open Closed Principle -> 
+* Bir nesne gelişime açık değişime kapalı olmalıdır.
+* Bir uygulamaya yeni bir özellik eklemek istediğinizde var olan nesneyi değiştirmek zorunda kalırsak bu prensibi ihlal ediyoruz demektir.
+* Projemizde hayati alanları yani projemizin kalbi diyebileceğimiz fonksiyonlara vs  olabildiğince dokunmamalıyız yani öyle bir dizayn yapmalıyız ki 
+* projemizin hassaslığını en aza indirmeliyiz.
+* Open closed Prensibi doğru analiz ile anlaşılır, tasarımı iyi yapmalıyız ve değişik senaryolara hazır hale gelebilen bir kod yazmalıyız.
+* Merkezi bir nesneye dokunmadan değişikliğimizi gerçekleştirebilecek bir tasarım yapmalıyız.
+*
+
+* Enum -> sınırlı aralıktan seçin yapacakken, seçenekler belliyken kullanılır
+*
+** Liskov Substitution Principle ->
+* Bir sınıftan miras alan iki nesnenin birbirlerinin ve üst sınıftan oluşan nesnenin yerine İSTİSNASIZ kullanılabilmesi gerekir.
+* Mesela bir sınıftan miras alan her sınıfın nesnesine özel bir if ya da try catch yazıyorsanız bu prensibi ihlal ediyorsunuz.
+* 
+*
+** Interface segregation principle ->
+* Her fonksiyon kendi amacına göre bir arayüze sahip olmalıdır.
+* Bir interface'i implement etmek zorundasınız fakat bu interface'in bir metodu sizin için anlamsız ise o metod o interface'e bağlı olmamalı.
+* Yazdığımız interface'leri özelleştiriyoruz
+*
+*
+** Dependency inversion principle ->
+* Büyük sistemler küçük sistemlere değil, küçük sistemler büyüklere bağlı olmalıdır.
+*
+*
+* Extension method -> Var olan bir .NET tipine kendi metodlarımızı yazdığımızda extension method yazmış oluruz.
+* Devamlı kullandığımız bir fonksiyonu extension olarak yazabiliriz.
+* .NET te bazı işleri extension method lar yapıyor.
+* örneğin ; WHERE , FirstOrDefault , orderby
+* Extension methodlar static class altında bulunur , 
+*
+*
+*
+*
+* Models -> veri tabanında sakladığımız varlıkları içerir.
+* varlık(entity) -> veri tabanında 1 tabloda 1 satırda tutulan veridir.  
+* 
+* Dependency injection -> Çalışacak datanın nasıl bir mimariden türüyeceğini service te yazarız
+* 
+* Controller da çalışılan ürünleri kendisine getirecek yapıyı dışarıdan almalı.Bu dependency'i service adını veriyor.
+* 
+* Entity Framework ->
+* EF core -> ORM 'dir .Net core ile kullandığımız bir orm.
+* ORM -> object relational mapping (Nesne-İlişkisel Eşleme) -> 
+* 1. amaç ->yazılımcı veri tabanı işlemini kolaylıkla yapsın
+* orm -> veri tabanı ne olursa olsun oradaki yapıyı objelere çeviren yapıdır.
+* sql server , oracle, postgresql gibi tüm veir tabanlarında çalışıyor
+* 2 tane yaklaşımı var veri tabanıyla çalışmak için ;
+* 1. code first -> önce kodu yaz kod gitsin database oluştursun
+* 2. data base zaten varsa o veri tabanına bakarak kodu oluştur.
+* 
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*/
